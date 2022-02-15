@@ -7,7 +7,7 @@ RUN unzip photogenic.zip
 RUN cp -rvf photogenic/* .
 RUN rm -rf photogenic photogenic.zip
 ENTRYPOINT ["/usr/local/apache2"]
-CMD  ["-D", "FOREGROUND"]
+CMD  ["httpd-foreground"]
 EXPOSE 80
  
  
