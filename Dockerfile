@@ -6,7 +6,6 @@ RUN apt install unzip
 RUN unzip photogenic.zip
 RUN cp -rvf photogenic/* .
 RUN rm -rf photogenic photogenic.zip
-ENTRYPOINT ["/usr/local/apache2"]
 CMD  ["httpd-foreground"]
 EXPOSE 80
  
