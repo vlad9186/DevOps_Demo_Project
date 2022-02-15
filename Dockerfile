@@ -16,9 +16,9 @@ RUN apt install unzip
 #  zip\
 #  unzip
  ADD https://www.free-css.com/assets/files/free-css-templates/download/page265/shine.zip /var/www/html/
- WORKDIR /var/www/html/
+ WORKDIR  /usr/local/apache2/htdocs/ 
  RUN unzip shine.zip
- RUN cp -rvf /var/www/html/* /usr/local/apache2/htdocs/ .
- RUN rm -rf shine shine.zip
- CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+ RUN cp -rvf shine/* .
+ RUN rm -rf shine shine.zip 
+ CMD  ["httpd-foreground"]
  EXPOSE 80   
