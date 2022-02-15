@@ -7,7 +7,7 @@ RUN unzip photogenic.zip
 RUN cp -rvf photogenic/* .
 RUN rm -rf photogenic photogenic.zip
 CMD  ["httpd-foreground"]
-EXPOSE 80
+#EXPOSE 80
  
  
 # FROM  httpd:2.4
@@ -20,4 +20,4 @@ EXPOSE 80
 # RUN cp -rvf shine/* .
 # RUN rm -rf shine shine.zip 
 # CMD  ["httpd-foreground"]
-# EXPOSE 80   
+ EXPOSE 80   
