@@ -15,7 +15,7 @@ RUN apt install unzip
 # RUN yum install -y httpd \
 #  zip\
 #  unzip
- ADD https://www.free-css.com/assets/files/free-css-templates/download/page265/shine.zip /var/www/html/
+ ADD https://www.free-css.com/assets/files/free-css-templates/download/page265/shine.zip /usr/local/apache2/htdocs/
  WORKDIR  /usr/local/apache2/htdocs/ 
  RUN unzip shine.zip
  RUN cp -rvf shine/* .
