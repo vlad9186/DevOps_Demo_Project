@@ -1,0 +1,23 @@
+---
+- hosts: all
+  vars:
+   ansible_python_interpreter: /usr/bin/python3
+  tasks:
+  - name: create container
+    docker_container:
+      name: mycontainer
+      state: absent
+  - name: Remove image
+    docker_image:
+      state: absent
+      name: vlad9186/pipeline_demo:latest
+  - name: pull image
+    docker_image:
+      name: vlad9186/pipeline_demo:latest
+  - name: create container
+    docker_container:
+      name: mycontainer
+      image: vlad9186/pipeline_demo:latest
+      state: started
+      recreate: yes
+      ports: 1234:80
